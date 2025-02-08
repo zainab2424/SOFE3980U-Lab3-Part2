@@ -5,7 +5,7 @@
 3. Configure a continuous integration pipeline for a Jenkins job. 
 4. Configure a continuous deployment pipeline for a Jenkins job.
 ## Repository:   
-[https://github.com/zubxxr/SOFE3980U-Lab4](https://github.com/zubxxr/SOFE3980U-Lab4) 
+[https://github.com/zubxxr/SOFE3980U-Lab3-Part2](https://github.com/zubxxr/SOFE3980U-Lab3-Part2) 
 
 ## Introduction and Getting Started 
 1. Watch the following video about [Dev-ops](https://www.youtube.com/watch?v=LFDrDnKPOTg). 
@@ -23,11 +23,11 @@
    4. Clone the repository for the Helm values.
       ```cmd
       cd ~
-      git clone https://github.com/zubxxr/SOFE3980U-Lab4
+      git clone https://github.com/zubxxr/SOFE3980U-Lab3-Part2
       ```
    5. Use the Helm CLI to deploy the chart **cd-jenkins** with the configuration set from the repository **jenkins/values.yaml** onto Kubernetes with the name **cd-jenkins**.
       ```cmd
-      helm install cd-jenkins -f ~/SOFE3980U-Lab4/jenkins/values.yaml jenkinsci/jenkins --wait
+      helm install cd-jenkins -f ~/SOFE3980U-Lab3-Part2/jenkins/values.yaml jenkinsci/jenkins --wait
       ```
    6. **(optional)** to remove the **cd-jenkins** from Kubernetes. **<ins>Don’t run it now</ins>**.
       ```cmd
@@ -60,7 +60,7 @@
    ![pd_2](figures/pd_2.jpg)
    
 ## Create a Maven project job
-1. Create a GitHub account if you don't have one. Create a repository. Copy this [repository](https://github.com/GeorgeDaoud3/SOFE3980U-Lab4.git)'s content  into your repository.
+1. Create a GitHub account if you don't have one. Create a repository. Copy this [repository](https://github.com/zubxxr/SOFE3980U-Lab3-Part2)'s content  into your repository.
 2. Create a GitHub token: Within the GitHub page, login into your account. Choose  **settings**, **Developer settings**, **Personal access token**, and **Token (classic)**. Click **Generate new token**. Select **Generate new token (classic)**. Set the note, check **public_repo**, and click **Generate token**. Finally, copy the token code.
    
    ![sq4_7](figures/sq4_7.jpg)
