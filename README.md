@@ -215,7 +215,7 @@ The information obtained in the previous subsection will be saved in Jenkins as 
 3. Click **System**.
 4. Click **Global credentials (unrestricted)**.
 5. Click **Add credentials**.
-6. In the **Kind** field, select **Secret file**, upload the Service account JSON file, set the **ID** field to **serive_account**, and click **Create**.
+6. In the **Kind** field, select **Secret file**, upload the Service account JSON file, set the **ID** field to **service_account**, and click **Create**.
 7. Add another credential with the Kind **Secret Text**. Set the **ID** field to **project_id** and the **Secret** field to the GCP project ID obtained in the previous subsection.
 8. Add another credential with the Kind **Secret Text**. Set the **ID** field to **repo_path** and the **Secret** field to the full path of the repository obtained in the previous subsection.
 9. Add another credential with the Kind **Secret Text**. Set the **ID** field to **cluster_name** and the **Secret** field to the GKE cluster name obtained in the previous subsection.
