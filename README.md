@@ -148,6 +148,9 @@ The Other way is to create a customized job by providing a script (**Jenkinsfile
       * Set the **SCM** to **Git**
       * Set the **Repository URL** to your GitHub link.
       * Set the **branches to build** to ***/main**.
+        
+           ![image](https://github.com/user-attachments/assets/462a065b-e779-48a7-b0d8-3efdac247e5f)
+
       * Set the **Script Path** to BinaryCalculatorWebapp/Jenkinsfile
 5.	As the **webhook** is already configured, it should work automatically when  after each commit. Commit any change to the repository. Then, check that the job is been executed and check its report.
 
