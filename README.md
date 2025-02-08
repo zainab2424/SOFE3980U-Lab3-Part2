@@ -1,4 +1,4 @@
-# Lab 3-B: Continuous Integration and Continuous Delivery (Jenkins)
+# Lab 3 Part 2: Continuous Integration and Continuous Delivery (Jenkins)
 ## Objective   
 1. Git Familiar with Jenkins.
 2. Understand the pipeline syntax used by Jenkins.
