@@ -51,7 +51,7 @@
       ![sq4_3](figures/sq4_3.jpg)
    
 ## Protect Jenkins by Setting a Username and Password
-1. Click **Manage Jenkins**, select **System**, set the **Security Realm** to **Jenkins' own user database**, set the **Authentication** to **Logged-in users can do anything**, and uncheck **Allow users to sign up** and **Allow anonymous  read access**. Finally, click the **save** button.
+1. Click **Manage Jenkins**, select **Security**, set the **Security Realm** to **Jenkins' own user database**, set the **Authentication** to **Logged-in users can do anything**, and uncheck **Allow users to sign up** and **Allow anonymous  read access**. Finally, click the **save** button.
    
    ![pd_1](figures/pd_1.jpg)
    
