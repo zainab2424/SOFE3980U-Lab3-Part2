@@ -23,7 +23,7 @@
    4. Clone the repository for the Helm values.
       ```cmd
       cd ~
-      git clone https://github.com/GeorgeDaoud3/SOFE3980U-Lab4.git
+      git clone https://github.com/zubxxr/SOFE3980U-Lab4
       ```
    5. Use the Helm CLI to deploy the chart **cd-jenkins** with the configuration set from the repository **jenkins/values.yaml** onto Kubernetes with the name **cd-jenkins**.
       ```cmd
