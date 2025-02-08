@@ -61,16 +61,17 @@
    
 ## Create a Maven project job
 1. Create a GitHub account if you don't have one. Fork this [repository](https://github.com/zubxxr/SOFE3980U-Lab3-Part2).
-2. Create a GitHub token: Within the GitHub page, login into your account. Choose  **settings**, **Developer settings**, **Personal access token**, and **Token (classic)**. Click **Generate new token**. Select **Generate new token (classic)**. Set the note, check **public_repo**, and click **Generate token**. Finally, copy the token code. **Make sure to copy and store it because you will not be able to see it again after leaving that page. You will have to regenerate it if you do, which is not an issue, but the token code will change.**
+2. Create a GitHub token: Within the GitHub page, login into your account. Choose  **settings**, **Developer settings**, **Personal access token**, and **Token (classic)**. Click **Generate new token**. Select **Generate new token (classic)**. Set the note, check **public_repo**, and click **Generate token**. Finally, copy the token code.
+   - **Make sure to copy and store it because you will not be able to see it again after leaving that page. You will have to regenerate it if you do, which is not an issue, but the token code will change.**
    
    ![sq4_7](figures/sq4_7.jpg)
    
-3. Install **Pipeline Maven Integration** Plugin: select **Dashboard**, **Manage Jenkins**, then **Manage Plugins**. Choose **Available Plugins**. Search for **Pipeline Maven Integration**. After checking it, click **Download now and install after restart**. Check **Restart Jenkins when installation is complete and no jobs are running**. Finally, wait until the plugin is installed and Jenkins restarts.
+4. Install **Pipeline Maven Integration** Plugin: select **Dashboard**, **Manage Jenkins**, then **Manage Plugins**. Choose **Available Plugins**. Search for **Pipeline Maven Integration**. After checking it, click **Download now and install after restart**. Check **Restart Jenkins when installation is complete and no jobs are running**. Finally, wait until the plugin is installed and Jenkins restarts.
 
    ![sq4_4](figures/sq4_4.jpg)
    
-4. Repeat the previous step to install **Maven Integration** and  **GitHub** plugins
-5. Configure GitHub Plugin
+5. Repeat the previous step to install **Maven Integration** and  **GitHub** plugins
+6. Configure GitHub Plugin
    1. Select **Dashboard**, **Manage Jenkins**, then **System**. Scroll down to the **GitHub** section. Click the **Add GitHub Server** button. Name it, **github**. Finally, click **Add**.
 
       ![sq4_8](figures/sq4_8.jpg)
@@ -83,15 +84,15 @@
 
       ![sq4_10](figures/sq4_10.jpg)
       
-6. Configure Maven Plugin: select **Dashboard**, **Manage Jenkins**, **Tools**, choose **Add Maven**, name it **maven**, choose **Install automatically**, then click **Save**.
+7. Configure Maven Plugin: select **Dashboard**, **Manage Jenkins**, **Tools**, choose **Add Maven**, name it **maven**, choose **Install automatically**, then click **Save**.
 
    ![sq4_5](figures/sq4_5.jpg)
    
-7. Create a Job: select **Dashboard**. Click **New Item**. Name it **binaryCalculate_mvn**, and choose **Maven Project**. Finally, click **Ok**.
+8. Create a Job: select **Dashboard**. Click **New Item**. Name it **binaryCalculate_mvn**, and choose **Maven Project**. Finally, click **Ok**.
 
    ![sq4_6](figures/sq4_6.jpg)
    
-8. Configure the job: The job will automatically pull the repository for each commit. Then, the maven project is built, and the status is sent back to the repository associate it with the commit.
+9. Configure the job: The job will automatically pull the repository for each commit. Then, the maven project is built, and the status is sent back to the repository associate it with the commit.
    1. For **Source Code Management**, select **Git**. Fill in the **Repository URL**. Make sure that the **branch** is blank.
 
       ![sq4_11](figures/sq4_11.jpg)
@@ -110,7 +111,7 @@
       
    5. Click **Save**.
       
-9. To allow Jenkins to start running after each commit automatically, a **webhook** has to be configured in the GitHub repository.
+10. To allow Jenkins to start running after each commit automatically, a **webhook** has to be configured in the GitHub repository.
    1. Within the repository page in the Github, select **Settings**. Select **Webhooks**. Then, click **Add webhook**.
 
       ![sq4_15](figures/sq4_15.jpg)
@@ -119,7 +120,7 @@
 
       ![sq4_16](figures/sq4_16.jpg)
       
-10. The job will start building once you commit any changes to the repository (or you can trigger it by editting the readme file).
+11. The job will start building once you commit any changes to the repository (or you can trigger it by editting the readme file).
     
     1. To check the status of each run or to build the job manually, navigate to the job page within Jenkins.
 
