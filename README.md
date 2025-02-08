@@ -60,8 +60,8 @@
    ![pd_2](figures/pd_2.jpg)
    
 ## Create a Maven project job
-1. Create a GitHub account if you don't have one. Create a repository. Copy this [repository](https://github.com/zubxxr/SOFE3980U-Lab3-Part2)'s content  into your repository.
-2. Create a GitHub token: Within the GitHub page, login into your account. Choose  **settings**, **Developer settings**, **Personal access token**, and **Token (classic)**. Click **Generate new token**. Select **Generate new token (classic)**. Set the note, check **public_repo**, and click **Generate token**. Finally, copy the token code.
+1. Create a GitHub account if you don't have one. Fork this [repository](https://github.com/zubxxr/SOFE3980U-Lab3-Part2).
+2. Create a GitHub token: Within the GitHub page, login into your account. Choose  **settings**, **Developer settings**, **Personal access token**, and **Token (classic)**. Click **Generate new token**. Select **Generate new token (classic)**. Set the note, check **public_repo**, and click **Generate token**. Finally, copy the token code. **Make sure to copy and store it because you will not be able to see it again after leaving that page. You will have to regenerate it if you do, which is not an issue, but the token code will change.**
    
    ![sq4_7](figures/sq4_7.jpg)
    
