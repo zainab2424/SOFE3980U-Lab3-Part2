@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        SERVICE_ACCOUNT= credentials('service_account')    // secret file for the GCP credential JSON file. I set it manually in Jenkins credentials
+        SERVICE_ACCOUNT= credentials('serive_account')    // secret file for the GCP credential JSON file. I set it manually in Jenkins credentials
         PROJECT = credentials('project_id')
         REPO_PATH= credentials("repo_path") // secret text for the repo path. I set it manually in Jenkins credentials
         APP_NAME = "binarycalculatorwebapp"
@@ -49,9 +49,7 @@ pipeline {
                         // set the credential for gcloud within the container
                         sh 'gcloud auth activate-service-account --key-file $SERVICE_ACCOUNT'
                         sh 'gcloud config set project $PROJECT'
-			// docker build + push
-			sh 'gcloud builds submit -t $IMAGE_TAG --suppress-logs'
-                        }
+                        sh 'gcloud builds submit -t $IMAGE_TAG --suppress-logs'
                     }
                 }
             }
