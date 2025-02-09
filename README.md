@@ -230,7 +230,10 @@ The information obtained in the previous subsection will be saved in Jenkins as 
 9. Add another credential with the Kind **Secret Text**. Set the **ID** field to **cluster_name** and the **Secret** field to the GKE cluster name obtained in the previous subsection.
 10. Add another credential with the Kind **Secret Text**. Set the **ID** field to **cluster_zone** and the **Secret** field to the GKE cluster location obtained in the previous subsection.
 
-### 4. Create Jenkins Job 
+### 4. Enable API
+Search up **Cloud Build API** in the search bar and enable the API.
+
+### 5. Create Jenkins Job 
 1. Read the file [/BinaryCalculatorWebapp/Jenkinsfile_v2](/BinaryCalculatorWebapp/Jenkinsfile_v2)
     * It reads the secret files and text and sets them as environment variables.
     * It creates an agent as a Kubernetes pod that creates a container, namely **gcloud**, from the image **google/cloud-sdk:latest**. It includes a Google Cloud SDK with the gcloud CLI.
