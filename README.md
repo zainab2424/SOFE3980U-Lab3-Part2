@@ -195,18 +195,26 @@ We will start by creating a service account. It permits dealing with the **Artif
     gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
         --member "serviceAccount:jenkins-sa@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
         --role "roles/container.admin"
-   	
+    
+    gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member "serviceAccount:jenkins-sa@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
+    --role "roles/iam.serviceAccountUser"
+
+    gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member "serviceAccount:jenkins-sa@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
+    --role "roles/viewer"
+    
     gcloud iam service-accounts keys create service_account.json  \
         --iam-account=jenkins-sa@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com  
     ```
     These commands will create a service account, grant it three roles, and generate a JSON key file in the home directory.
-2.  Download the **service_account.json** file from the home directory of the GCP console to your computer.
-3.  Print the GCP project name, copy it, and save it.
+1.  Download the **service_account.json** file from the home directory of the GCP console to your computer.
+2.  Print the GCP project name, copy it, and save it.
     ``` cmd
     echo $GOOGLE_CLOUD_PROJECT
     ```
-4. Navigate to the **Artifact Registry**, copy the full path of the repository created before, and save it.
-5.  Navigate to the **Clusters** in **Kubernetes Engine**, copy the cluster Name and location, and save them.
+3. Navigate to the **Artifact Registry**, copy the full path of the repository created before, and save it.
+4.  Navigate to the **Clusters** in **Kubernetes Engine**, copy the cluster Name and location, and save them.
 
 ### 3. Save the Important Information in Jenkins
 The information obtained in the previous subsection will be saved in Jenkins as secret text and files for security reasons. 
