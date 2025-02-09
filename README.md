@@ -1,6 +1,6 @@
 # Lab 3 Part 2: Continuous Integration and Continuous Delivery (Jenkins)
 ## Objective   
-1. Get Familiar with Jenkins..
+1. Get Familiar with Jenkins.
 2. Understand the pipeline syntax used by Jenkins.
 3. Configure a continuous integration pipeline for a Jenkins job. 
 4. Configure a continuous deployment pipeline for a Jenkins job.
@@ -273,6 +273,6 @@ What do pipeline, node, agent, stage, and steps mean in the context of Jenkins?
 
 ## Deliverable
 * A report containing both the discussion and design parts.
-* Your Github link.
+* Your Github link and video links in the report.
 * An audible video of about 3 minutes showing the continuous integration part (the two techniques).
 * An audible video of about 3 minutes showing the design part.
