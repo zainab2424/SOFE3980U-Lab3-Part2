@@ -260,8 +260,16 @@ As the webhook is already configured, it should work automatically when after ea
 What do pipeline, node, agent, stage, and steps mean in the context of Jenkins?
 
 ## Design:
-* Update the Binary Calculator project to the latest version you have implemented. Check that the jobs start running and check their report. 
-
+* Update the Binary Calculator project to the latest version you have implemented. Check that the jobs start running and check their report.
+* To access the Binary Calculator application through the URL:
+   * Open **Jenkins**
+   * Open the **BinaryCalculator_cicd**
+   * Click the most recent job finished
+   * Click **Console Output**
+   * Scroll all the way down and there will be an IP address available. Yours will be different.
+     ![image](https://github.com/user-attachments/assets/660aa0c8-dc26-44d5-aa7f-3567592e6f58)
+   * Take the URL, and attach port 8080 and open it in a browser.
+     ![image](https://github.com/user-attachments/assets/ba462c43-db83-42be-aae6-2842db642014)
 
 ## Deliverable
 * A report containing both the discussion and design parts.
