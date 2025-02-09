@@ -208,14 +208,13 @@ We will start by creating a service account. It permits dealing with the **Artif
         --iam-account=jenkins-sa@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com  
     ```
     These commands will create a service account, grant it three roles, and generate a JSON key file in the home directory.
-2.  Search up **Cloud Build API** in the search bar and enable the API.
-3.  Download the **service_account.json** file from the home directory of the GCP console to your computer.
-4.  Print the GCP project name, copy it, and save it.
+2.  Download the **service_account.json** file from the home directory of the GCP console to your computer.
+3.  Print the GCP project name, copy it, and save it.
     ``` cmd
     echo $GOOGLE_CLOUD_PROJECT
     ```
-5. Navigate to the **Artifact Registry**, copy the full path of the repository created before, and save it.
-6.  Navigate to the **Clusters** in **Kubernetes Engine**, copy the cluster Name and location, and save them.
+4. Navigate to the **Artifact Registry**, copy the full path of the repository created before, and save it.
+5.  Navigate to the **Clusters** in **Kubernetes Engine**, copy the cluster Name and location, and save them.
 
 ### 3. Save the Important Information in Jenkins
 The information obtained in the previous subsection will be saved in Jenkins as secret text and files for security reasons. 
