@@ -23,16 +23,36 @@ public class BinaryController {
 		model.addAttribute("operand1", operand1);
 		model.addAttribute("operator", operator);
 		model.addAttribute("operand2", operand2);
+		// Perform basic validation to check if operands are valid binary strings
+		if (!isBinaryString(operand1) || !isBinaryString(operand2)) {
+			return "Error";
+		}
 		Binary number1=new Binary (operand1);
 		Binary number2=new Binary (operand2);
-		switch(operator)
-		{
+		switch(operator) {
 			case "+":
 				model.addAttribute("result", Binary.add(number1,number2).getValue());
+				return "result";
+			case "*":
+				model.addAttribute("result", Binary.multiply(number1,number2).getValue());
+				return "result";
+			case "&":
+				model.addAttribute("result", Binary.AND(number1,number2).getValue());
+				return "result";
+			case "|":
+				model.addAttribute("result", Binary.OR(number1,number2).getValue());
 				return "result";
 			default:
 				return "Error";
 		}
 	}
-
+	// Helper method to check if a string is a valid binary string
+	private boolean isBinaryString(String str) {
+		for (char c : str.toCharArray()) {
+			if (c != '0' && c != '1') {
+				return false;
+			}
+		}
+		return true;
+	}
 }
