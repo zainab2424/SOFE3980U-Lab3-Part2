@@ -56,5 +56,78 @@ public class BinaryControllerTest {
 			.andExpect(model().attribute("result", "1110"))
 			.andExpect(model().attribute("operand1", "111"));
     }
+public void postWithMissingOperand2() throws Exception {
+        this.mvc.perform(post("/").param("operand1", "111").param("operator", "+"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("Error"));
+    }
 
+    @Test
+    public void postWithValidOperandsAndOperator() throws Exception {
+        this.mvc.perform(post("/").param("operand1", "101").param("operator", "+").param("operand2", "111"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("result"))
+                .andExpect(model().attribute("result", "1100"))
+                .andExpect(model().attribute("operand1", "101"));
+    }
+
+    @Test
+    public void postWithMultiplication() throws Exception {
+        // Test case for multiplication operation with valid operands and operator
+        this.mvc.perform(post("/").param("operand1", "101").param("operator", "*").param("operand2", "10"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("result"))
+                .andExpect(model().attribute("result", "1010"))
+                .andExpect(model().attribute("operand1", "101"));
+    }
+
+    @Test
+    public void postMultiplicationUnequalLength() throws Exception {
+        // Test case for multiplication operation with different length of operands
+        this.mvc.perform(post("/").param("operand1", "101").param("operator", "*").param("operand2", "10"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("result"))
+                .andExpect(model().attribute("result", "1010"))
+                .andExpect(model().attribute("operand1", "101"));
+    }
+
+    @Test
+    public void postWithAND() throws Exception {
+        // Test case for AND operation with valid operands and operator
+        this.mvc.perform(post("/").param("operand1", "101").param("operator", "&").param("operand2", "110"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("result"))
+                .andExpect(model().attribute("result", "100"))
+                .andExpect(model().attribute("operand1", "101"));
+    }
+
+    @Test
+    public void postWithANDUnequalLength() throws Exception {
+        // Test case for AND operation with operands of unequal lengths
+        this.mvc.perform(post("/").param("operand1", "101").param("operator", "&").param("operand2", "1100"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("result"))
+                .andExpect(model().attribute("result", "100")) // Expecting the result of the AND operation
+                .andExpect(model().attribute("operand1", "101"));
+    }
+
+    @Test
+    public void postWithOR() throws Exception {
+        // Test case for OR operation with valid operands and operator
+        this.mvc.perform(post("/").param("operand1", "101").param("operator", "|").param("operand2", "110"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("result"))
+                .andExpect(model().attribute("result", "111"))
+                .andExpect(model().attribute("operand1", "101"));
+    }
+
+    @Test
+    public void postWithORUnequalLength() throws Exception {
+        // Test case for OR operation with operands of unequal lengths
+        this.mvc.perform(post("/").param("operand1", "101").param("operator", "|").param("operand2", "1100"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("result"))
+                .andExpect(model().attribute("result", "1101"))
+                .andExpect(model().attribute("operand1", "101"));
+    }
 }
